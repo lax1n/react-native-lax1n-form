@@ -136,6 +136,8 @@ DatePickerComponent.propTypes = {
 DatePickerComponent.defaultProps = {
   pickerWrapper: <View/>,
   dateTimeFormat: (date, mode)=>{
+    console.log('Date when received:', date);
+    console.log('Mode when received:', mode);
     if(!date) return "";
     let value='';
     switch(mode){
@@ -150,6 +152,7 @@ DatePickerComponent.defaultProps = {
       default:
         value = date.toLocaleDateString()
     }
+    console.log('cancer after transformation:', value);
     return value;
   }
 };
