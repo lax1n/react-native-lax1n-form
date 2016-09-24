@@ -62,7 +62,7 @@ export class DatePickerComponent extends React.Component{
           minuteInterval, mode,
           onDateChange,   timeZoneOffsetInMinutes, format } = this.props;
 
-    let  valueString = Moment(this.state.date, this.format).toDate();
+    let  valueString = this.props.dateTimeFormat(this.state.date, this.props.mode, this.props.format);
 
     let datePicker= <DatePickerIOS
       maximumDate = {maximumDate}
