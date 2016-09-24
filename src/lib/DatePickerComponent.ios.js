@@ -154,7 +154,7 @@ DatePickerComponent.defaultProps = {
         value = date.toLocaleDateString()
     }
     */
-    value = Moment(date, FORMATS[mode]);
+    value = Moment(date, FORMATS[mode]).toDate();
     console.log('cancer after transformation:', value);
     return value;
   }
