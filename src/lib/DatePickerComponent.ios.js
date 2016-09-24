@@ -38,7 +38,7 @@ export class DatePickerComponent extends React.Component{
   }
 
   handleValueChange(date){
-
+    console.log('is this cancer here?', date);
     this.setState({date:date});
 
     this.props.onChange && this.props.onChange(this.props.dateTimeFormat(date, this.props.mode));
@@ -68,8 +68,7 @@ export class DatePickerComponent extends React.Component{
       maximumDate = {maximumDate}
       minimumDate = {minimumDate}
       minuteInterval = {minuteInterval}
-      mode = {mode}
-      format = {format}
+      mode = 'datetime'
       timeZoneOffsetInMinutes = {timeZoneOffsetInMinutes}
       date = {this.state.date || Moment().toDate()}
       onDateChange = {this.handleValueChange.bind(this)}
