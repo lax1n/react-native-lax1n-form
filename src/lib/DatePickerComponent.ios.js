@@ -140,6 +140,7 @@ DatePickerComponent.defaultProps = {
     console.log('Mode when received:', mode);
     if(!date) return "";
     let value='';
+    /*
     switch(mode){
       case 'datetime':
        value = date.toLocaleDateString()
@@ -152,6 +153,8 @@ DatePickerComponent.defaultProps = {
       default:
         value = date.toLocaleDateString()
     }
+    */
+    value = Moment(date, FORMATS[mode]);
     console.log('cancer after transformation:', value);
     return value;
   }
