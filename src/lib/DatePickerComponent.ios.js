@@ -71,7 +71,7 @@ export class DatePickerComponent extends React.Component{
       mode = {mode}
       format = {format}
       timeZoneOffsetInMinutes = {timeZoneOffsetInMinutes}
-      date = {this.state.date || Moment()}
+      date = {this.state.date || Moment().toDate()}
       onDateChange = {this.handleValueChange.bind(this)}
     />
 
