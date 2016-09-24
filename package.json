@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "EB",
   "name": "react-native-lax1n-form",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "dependencies": {
     "moment": "^2.15.1"
   }
