@@ -38,7 +38,6 @@ export class DatePickerComponent extends React.Component{
   }
 
   handleValueChange(date){
-    console.log('is this cancer here?', date);
     this.setState({date:date});
 
     this.props.onChange && this.props.onChange(this.props.dateTimeFormat(date, this.props.mode));
@@ -135,26 +134,9 @@ DatePickerComponent.propTypes = {
 DatePickerComponent.defaultProps = {
   pickerWrapper: <View/>,
   dateTimeFormat: (date, mode)=>{
-    console.log('Date when received:', date);
-    console.log('Mode when received:', mode);
     if(!date) return "";
     let value='';
-    /*
-    switch(mode){
-      case 'datetime':
-       value = date.toLocaleDateString()
-              + ' '
-              + date.toLocaleTimeString()
-      break;
-      case 'time':
-        value = date.toLocaleTimeString()
-      break;
-      default:
-        value = date.toLocaleDateString()
-    }
-    */
     value = Moment(date).format(FORMATS[mode]) + '';
-    console.log('cancer after transformation:', value);
     return value;
   }
 };
