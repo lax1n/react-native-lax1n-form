@@ -68,7 +68,7 @@ export class DatePickerComponent extends React.Component{
       maximumDate = {maximumDate}
       minimumDate = {minimumDate}
       minuteInterval = {minuteInterval}
-      mode = 'datetime'
+      mode = {mode}
       timeZoneOffsetInMinutes = {timeZoneOffsetInMinutes}
       date = {this.state.date || Moment().toDate()}
       onDateChange = {this.handleValueChange.bind(this)}
@@ -153,7 +153,7 @@ DatePickerComponent.defaultProps = {
         value = date.toLocaleDateString()
     }
     */
-    value = Moment(date, FORMATS[mode]).toDate() + '';
+    value = Moment(date).format(FORMATS[mode]) + '';
     console.log('cancer after transformation:', value);
     return value;
   }
