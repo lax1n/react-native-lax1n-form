@@ -27,7 +27,7 @@ export class DatePickerComponent extends React.Component{
   }
   setDate(date){
     this.setState({date:date});
-    if(this.props.onChange)      this.props.onChange(Moment(date, this.format).toDate());
+    if(this.props.onChange)      this.props.onChange(Moment(date, this.format).toDate() + '');
     if(this.props.onValueChange) this.props.onValueChange(date);
   }
   handleLayoutChange(e){
@@ -41,7 +41,7 @@ export class DatePickerComponent extends React.Component{
 
     this.setState({date:date});
 
-    this.props.onChange && this.props.onChange(Moment(date, this.format).toDate());
+    this.props.onChange && this.props.onChange(Moment(date, this.format).toDate() + '');
     this.props.onValueChange && this.props.onValueChange(date);
 
   }
